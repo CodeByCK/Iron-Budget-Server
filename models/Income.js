@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const incomeSchema = new Schema({
   userId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
+    type: String
   },
 
   name: {
@@ -28,4 +27,4 @@ const incomeSchema = new Schema({
 
 const Income = mongoose.model("Income", incomeSchema);
 
-module.exports = Income
+module.exports = Income;
