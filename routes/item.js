@@ -5,6 +5,18 @@ const Group = require('../models/Group')
 
 
 
+// router.get('/api/GroupItems/:id', (req, res, next) => {
+//   let groupId = req.params.id
+//   Item.find({ groupId: req.params.id })
+//     .then(response => {
+//       res.json({ response })
+//     }).catch(err => {
+//       res.json({ err })
+//     })
+// })
+
+
+
 // /api/createItem/${groupId}
 router.post('/api/createItem/', (req, res, next) => {
   let { name, planned, groupId } = req.body
