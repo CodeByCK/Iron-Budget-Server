@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 
 const itemSchema = new Schema({
   userId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
+    type: String
   },
 
   groupId: {
@@ -22,6 +21,11 @@ const itemSchema = new Schema({
     default: 0
   },
 
+  spent: {
+    type: Number,
+    default: 0
+  },
+
   date: {
     type: Date,
     default: Date.now
@@ -31,6 +35,6 @@ const itemSchema = new Schema({
     timestamps: true
   });
 
-const Income = mongoose.model("Item", itemSchema);
+const Item = mongoose.model("Item", itemSchema);
 
 module.exports = Item
