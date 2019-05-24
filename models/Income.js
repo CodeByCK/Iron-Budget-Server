@@ -16,6 +16,11 @@ const incomeSchema = new Schema({
     default: 0
   },
 
+  received: {
+    type: Number,
+    default: 0.00
+  },
+
   date: {
     type: Date,
     default: Date.now

@@ -73,6 +73,12 @@ app.use('/', index);
 const auth = require('./routes/auth');
 app.use('/', auth);
 
+const income = require('./routes/income');
+app.use('/', income);
+
+const group = require('./routes/group');
+app.use('/', group);
+
 
 
 

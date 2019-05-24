@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 const groupSchema = new Schema({
   userId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'User'
   },
 
   name: {
     type: String,
-    default: "Untitled"
+    default: "UNTITLED"
   },
 
   amount: {
