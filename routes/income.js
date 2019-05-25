@@ -5,7 +5,7 @@ const Income = require('../models/Income')
 
 
 router.post("/api/newPaycheck", (req, res, next) => {
-  let { name, planned, userId } = req.body;
+  let { name, userId, planned } = req.body;
   console.log(req.body, "ddsadsadasdasdasd")
   Income.create({
     userId,
