@@ -82,6 +82,9 @@ app.use('/', group);
 const item = require('./routes/item');
 app.use('/', item);
 
+const transaction = require('./routes/transaction');
+app.use('/', transaction);
+
 
 
 

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const transactionSchema = new Schema({
   userId: {
     type: String,
-    required: true
+    // required: true
   },
 
   groupId: {
@@ -19,12 +19,12 @@ const transactionSchema = new Schema({
 
   name: {
     type: String,
-    required: true
+    // required: true
   },
 
   amount: {
     type: Number,
-    required: true
+    // required: true
   },
 
   date: {
@@ -36,6 +36,6 @@ const transactionSchema = new Schema({
     timestamps: true
   });
 
-const Income = mongoose.model("Transaction", transactionSchema);
+const Transaction = mongoose.model("Transaction", transactionSchema);
 
 module.exports = Transaction
