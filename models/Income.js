@@ -17,10 +17,11 @@ const incomeSchema = new Schema({
     default: 0
   },
 
-  received: {
-    type: Number,
-    default: 0.00
-  },
+  received: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Transaction'
+  }]
+  ,
 
   date: {
     type: Date,

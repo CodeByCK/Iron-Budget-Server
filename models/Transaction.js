@@ -17,6 +17,12 @@ const transactionSchema = new Schema({
     ref: 'Item'
   },
 
+  incomeId: {
+    type: Schema.Types.ObjectId,
+    ref: 'Income'
+
+  },
+
   name: {
     type: String,
     // required: true
