@@ -16,8 +16,10 @@ router.post('/api/createItem/', (req, res, next) => {
   }).then(response => {
     console.log(343, response)
     Group.update({ _id: groupId }, { $push: { items: response._id } }).then(group => {
-      console.log('updated group', group)
-      res.json({ updated: group })
+      // console.log('updated group', group)
+      // res.json({ updated: group })
+      res.json(response)
+
     })
   }).catch(err => {
     console.log(err)

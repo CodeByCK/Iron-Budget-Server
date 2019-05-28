@@ -39,7 +39,12 @@ router.get('/api/transactions/:id', (req, res, next) => {
 router.get('/api/deleteTransaction/:id', (req, res, next) => {
   Transaction.findByIdAndRemove(req.params.id)
     .then(response => {
-      res.json(response)
+      Income.findByIdAndUpdate(response.incomeId, {
+        $pull: { received: response.amount }
+      })
+        .then(response => {
+          res.json(response)
+        })
     }).catch(err => {
       res.json(err)
     })

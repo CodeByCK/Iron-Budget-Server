@@ -85,6 +85,9 @@ app.use('/', item);
 const transaction = require('./routes/transaction');
 app.use('/', transaction);
 
+const plaidConfig = require('./routes/plaidConfig');
+app.use('/', plaidConfig);
+
 
 
 
