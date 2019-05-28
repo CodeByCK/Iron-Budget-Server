@@ -18,8 +18,7 @@ const incomeSchema = new Schema({
   },
 
   received: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Transaction'
+    type: Number
   }]
   ,
 

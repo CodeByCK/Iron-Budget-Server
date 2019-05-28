@@ -72,7 +72,12 @@ router.post('/api/createIncomeTransaction', (req, res, next) => {
     userId
   }).then(response => {
     // console.log(response)
-    res.json(response)
+    Income.findByIdAndUpdate(response.incomeId, {
+      $push: { received: response.amount }
+    })
+      .then(response => {
+        res.json(response)
+      })
   }).catch(err => {
     // console.log(err)
     res.json(err)
@@ -82,14 +87,14 @@ router.post('/api/createIncomeTransaction', (req, res, next) => {
 
 
 //! Get the received amount from the income transactions
-router.get('/api/getTransaction/income/:id', (req, res, next) => {
-  Transaction.find({ incomeId: req.params.id })
-    .then(response => {
-      res.json(response)
-    }).catch(err => {
-      res.json(err)
-    })
-})
+// router.get('/api/getTransaction/income/:id', (req, res, next) => {
+//   Transaction.find({ incomeId: req.params.id })
+//     .then(response => {
+//       res.json(response)
+//     }).catch(err => {
+//       res.json(err)
+//     })
+// })
 
 
 module.exports = router;
