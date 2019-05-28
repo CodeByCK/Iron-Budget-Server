@@ -13,10 +13,10 @@ router.post('/api/createTransaction', (req, res, next) => {
     date,
     userId
   }).then(response => {
-    console.log(response)
+    // console.log(response)
     res.json(response)
   }).catch(err => {
-    console.log(err)
+    // console.log(err)
     res.json(err)
   })
 });
@@ -34,6 +34,19 @@ router.get('/api/transactions/:id', (req, res, next) => {
 
 router.get('/api/deleteTransaction/:id', (req, res, next) => {
   Transaction.findByIdAndRemove(req.params.id)
+    .then(response => {
+      res.json(response)
+    }).catch(err => {
+      res.json(err)
+    })
+})
+
+
+
+
+
+router.get('/api/getTransaction/:id', (req, res, next) => {
+  Transaction.find({ itemId: req.params.id })
     .then(response => {
       res.json(response)
     }).catch(err => {
