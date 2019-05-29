@@ -65,7 +65,9 @@ app.use(function (req, res, next) {
 // default value for title local
 app.locals.title = 'Iron Budget';
 
-
+app.get('*', function (req, res) {
+  res.sendfile(__dirname + '/public/index.html');
+});
 
 const index = require('./routes/index');
 app.use('/', index);
